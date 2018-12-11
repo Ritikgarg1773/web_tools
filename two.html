@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>list from data</title>
+</head>
+<body>
+	Input your data: <input type="text" id="dat" ><br>
+	<button type="button" onclick="submit()"> submit </button><br>
+	<ol type="A" id="list"></ol>
+
+<script>
+function submit() {
+  x=document.getElementById("dat").value;
+  document.getElementById("list").innerHTML+= '<li>' + x + '</li>'
+  document.getElementById("dat").value = ""
+}
+</script>
+
+
+
+
+</body>
+</html>
