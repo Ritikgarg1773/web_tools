@@ -1,4 +1,3 @@
-# first
-learning web-dev
-some of my first projects on HTML, CSS and JS
-working for QrED.
+#learning web-dev
+Some of my first projects on HTML, CSS and JS
+
