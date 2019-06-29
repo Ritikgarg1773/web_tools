@@ -1,21 +1,69 @@
 <!DOCTYPE html>
+<style type="text/css">
+	#body{
+		min-height: 400px;
+		margin-top: 3%;
+
+	}
+	@viewport{
+		zoom=1.0;
+		width: extend-to-zoom;
+	}
+</style>
 <html>
 <head>
-	<title>list from data</title>
+	<meta name="viewport" charset="utf-8" content="width-device-width, initial-scale=1">
+	<title>Note down you Time</title>
 </head>
-<body>
-	Input your data: <input type="text" name="datain" id="dat" ><br>
+<body style="background-image :url( http://www.aurorawatch.ca/images/stories/20161031/20161008_Gier_02.jpg) ">
+	<div style="width: 100%;height: 100%"><center>
+	<h1>Add Activity</h1>
+	<form id="frm">
+	<select name="activity">
+		<option value="Sleep">Sleep</option><option value="morrout">Morning routine</option><option value="bus">Bus</option>
+		<option value="school">School</option><option value="schoollunch">School lunch</option><option value="refresh">Refresh</option>
+		<option value="eat">Eat</option><option value="homework">Homework</option><option value="park">Park</option>
+		<option value="bath">Bath</option><option value="famtime">Family time</option><option value="timewaste">Time waste</option>
+		<option value="brushteeth">Brush teeth</option><option value="hair">Hair combing</option>
+	</select>	
+	<!-- <input color="pink" type="" name="activity" id="act" placeholder="activity"> -->
+	<input type="time" name="timestart" id="st" placeholder="start time">
+	<input type="time" name="timestop" id="end" placeholder="end time" >
+	</form>
 	<button type="button" onclick="submita()"> submit </button><br>
-	<ol type="A" id="list"></ol>
-
+	</center>
+	</div>
+	<div ><center>
+	<table style="background-color: lightgreen" border="1">
+		<thead>
+			<tr>
+			<th>Activity</th>
+			<th>Start time</th>
+			<th>End time</th>
+			<th>Want to Edit?</th>
+			</tr>
+		</thead>
+		<tbody id="tbl">
+			
+		</tbody>
+	</table></center>
+	</div>
 <script>
 function submita() {
-  x=document.getElementsByName("datain")[0].value;
-  document.getElementById("list").innerHTML += '<li><div> <p id="' + x + '" >' + x + ' <button type="button" onclick="done()" id="' + x + '">done </button> </p> </div></li>'
-  document.getElementsByName("datain")[0].value = ""
+  acty=document.getElementsByName("activity")[0].value;	
+  var tst=document.getElementById("st").value;
+  var ted=document.getElementById("end").value;
+  document.getElementById("tbl").innerHTML += '<tr><td>'+acty+'</td><td>'+tst+'</td><td>'+ted+'</td><td><button onclick="edit()" id=" '+tst+'">edit</button></td></tr>' 
+
+
+
+  // '<li><div> <p id="' + x + '" >' + x + ' <button type="button" onclick="edit()" id="' + x + '">edit </button> </p> </div></li>'
+  document.getElementsByName("activity")[0].value = ""
+  document.getElementsByName("timestart").value = ""
+  document.getElementsByName("timeend").value = ""
 }
 
-function done() {
+function edit() {
 	y=document.getElementById("x");
 	y.parentNode.removeChild(y)
 }
