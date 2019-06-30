@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<style type="text/css">
+	#body{
+		min-height: 400px;
+		margin-top: 3%;
+
+	}
+	@viewport{
+		zoom=1.0;
+		width: extend-to-zoom;
+	}
+</style>
+<head>
+	<meta name="viewport" charset="utf-8" content="width-device-width, initial-scale=1">
+	<title>Note down your Time</title>
+</head>
+<body  style="background-image :url( http://www.aurorawatch.ca/images/stories/20161031/20161008_Gier_02.jpg)">
+<div id="wrapper"><center>
+<h1>Add Activity</h1>
+<table align='center' cellspacing=1 cellpadding=1 id="data_table" border=1>
+	<thead>
+		<tr>
+			<th>Activity</th>
+			<th>Start time</th>
+			<th>End time</th>
+			<th>Want to Edit?</th>
+		</tr>
+	</thead>
+		<tbody id="tbl">
+			<tr>
+				<td><select name="activity" id="acty">
+						<option value="Sleep">Sleep</option><option value="morrout">Morning routine</option><option value="bus">Bus</option>
+						<option value="school">School</option><option value="schoollunch">School lunch</option><option value="refresh">Refresh</option><option value="extra">Extra Work</option><option value="dis">Discussion</option><option value="planning">Planning</option><option value="movie">Movie</option>
+						<option value="eat">Eat</option><option value="homework">Homework</option><option value="park">Park</option>
+						<option value="bath">Bath</option><option value="famtime">Family time</option><option value="timewaste">Time waste</option>
+						<option value="brushteeth">Brush teeth</option><option value="hair">Hair combing</option>
+					</select>	</td>
+				<td><input type="time" name="timestart" id="st" size="1px"></td>
+				<td><input type="time" name="timestop" id="end" size="1px"></td>
+				<td><input type="button" class="add" onclick="add_row()" value="Add Row"></td>
+			</tr>
+		</tbody>
+</table></center>
+</div>
+<script >
+	
+/*	function WriteToFile() {
+
+    set fso = CreateObject("Scripting.FileSystemObject");  
+    set s = fso.CreateTextFile("C:\test.txt", True);
+    s.writeline(document.passForm.input1.value);
+    s.writeline(document.passForm.input2.value);
+    s.writeline(document.passForm.input3.value);
+    s.Close();
+ }*/
+	function edit_row(no)
+{
+ document.getElementById("edit_button"+no).style.display="none";
+ document.getElementById("save_button"+no).style.display="block";
+	
+ var name=document.getElementById("name_row"+no);
+ var country=document.getElementById("country_row"+no);
+ var age=document.getElementById("age_row"+no);
+	
+ var name_data=name.innerHTML;
+ var country_data=country.innerHTML;
+ var age_data=age.innerHTML;
+	
+ name.innerHTML="<input type='text' id='name_text"+no+"' value='"+name_data+"'>";
+ country.innerHTML="<input type='text' id='country_text"+no+"' value='"+country_data+"'>";
+ age.innerHTML="<input type='text' id='age_text"+no+"' value='"+age_data+"'>";
+}
+
+function save_row(no)
+{
+ var name_val=document.getElementById("name_text"+no).value;
+ var country_val=document.getElementById("country_text"+no).value;
+ var age_val=document.getElementById("age_text"+no).value;
+
+ document.getElementById("name_row"+no).innerHTML=name_val;
+ document.getElementById("country_row"+no).innerHTML=country_val;
+ document.getElementById("age_row"+no).innerHTML=age_val;
+
+ document.getElementById("edit_button"+no).style.display="block";
+ document.getElementById("save_button"+no).style.display="none";
+}
+
+function delete_row(no)
+{
+ document.getElementById("row"+no+"").outerHTML="";
+}
+
+function add_row()
+{
+ var activity=document.getElementById("acty").value;
+ var timestart=document.getElementById("st").value;
+ var timestop=document.getElementById("end").value;
+ 
+ var table=document.getElementById("data_table");
+ var table_len=(table.rows.length)-1;
+ var row = table.insertRow(table_len).outerHTML="<tr id='row"+table_len+"'><td id='name_row"+table_len+"'>"+activity+"</td><td id='country_row"+table_len+"'>"+timestart+"</td><td id='age_row"+table_len+"'>"+timestop+"</td><td><input type='button' id='edit_button"+table_len+"' value='Edit' class='edit' onclick='edit_row("+table_len+")'> <input type='button' id='save_button"+table_len+"' value='Save' class='save' onclick='save_row("+table_len+")'> <input type='button' value='Delete' class='delete' onclick='delete_row("+table_len+")'></td></tr>";
+
+ document.getElementById("acty").value="";
+ document.getElementById("st").value="";
+ document.getElementById("end").value="";
+}
+</script>
+</body>
+</html>
