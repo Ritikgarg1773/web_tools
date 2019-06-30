@@ -1,4 +1,6 @@
 <!DOCTYPE html>
+<!-- modified version of the code present on http://talkerscode.com/webtricks/add-edit-and-delete-rows-from-table-dynamically-using-javascript.php --> 
+
 <html>
 <style type="text/css">
 	#body{
@@ -44,17 +46,9 @@
 </table></center>
 </div>
 <script >
-	
-/*	function WriteToFile() {
 
-    set fso = CreateObject("Scripting.FileSystemObject");  
-    set s = fso.CreateTextFile("C:\test.txt", True);
-    s.writeline(document.passForm.input1.value);
-    s.writeline(document.passForm.input2.value);
-    s.writeline(document.passForm.input3.value);
-    s.Close();
- }*/
-	function edit_row(no)
+
+function edit_row(no)
 {
  document.getElementById("edit_button"+no).style.display="none";
  document.getElementById("save_button"+no).style.display="block";
