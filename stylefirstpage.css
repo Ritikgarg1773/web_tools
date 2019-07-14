@@ -1,0 +1,15 @@
+h1{
+	color: purple;
+}
+body{
+	background-color: lightblue;
+}
+img{
+	width: 100%;
+	border: solid;
+	border-color: yellow;
+	border-width: 3px;
+}
+div{
+	background-color: green;
+}

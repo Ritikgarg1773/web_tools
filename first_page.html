@@ -2,10 +2,63 @@
 <html>
 <head>
 	<!-- This is the place(head) for metadata like CSS, Javascript etc. -->
-	<title></title>
+	<title>My page</title>  <!-- this appears as the tab's name or as blue coloured link when you search on google --> 
+	<style type="text/css">
+		h1 {                     /*This will apply to all the h1 element tags in the  html document*/
+			color: blue;
+		}
+		li {                       /*This will apply to all the h1 element tags in the  html document*/
+			color: orange;
+		}
+		h1 {                       /*This will override the previous styling of h1 element tags as it comes later*/  
+			color: violet;
+		}
+		img	{
+			border: 20px solid ; 
+			border-color: pink;
+		}
+		body {
+			background-color: lightgreen;
+		}
+	</style>
+
+	<link rel="stylesheet" type="text/css" href="stylefirstpage.css">   <!--  link tag connects html page with the css -->
+
+		<!-- priority ==>  style along the tag > stylesheet attached with link tag  > style tag used in the head of html   -->
+
+	
 </head>
 <body>
 	<!-- This is the place(body) for the elements to be displayed on the web page -->
-<h1>This is heading in h1 tag(the biggest tag)</h1>
-</body>
+<h1 >Lambergini </h1>  <!-- heading tags sizes from 1 to 6 / h1 tag(the biggest tag) /h6(smallest one)-->
+<h4>My favourite car  </h4>    <!-- these are block level elements -> means pushes everything after it to a new line. -->
+<img src ="https://tiresandparts.net/wp-content/uploads/Lamborghini-1.jpg"><br>
+
+<a href="quiz1.html">Wanna test yourself on html? (Try to recreate this website)!!!</a><br>
+<a href="http://www.iiitd.ac.in">Visit my college's website</a>
+
+<p style="color : grey">I just love it !!!</p>  <!-- it's a block element -->
+<h3>My automobiles list</h3>  <!-- heading for a list -->
+<div>
+<ol>
+		<li>bike
+		<ul>
+			<li>splender</li>
+			<li><u>harley davidson</u></li>
+			<li>bullet</li>
+		</ul>
+	</li>
+	<li>cars
+		<ol>
+			<li style="color:brown"><strong>lambergini</strong></li>   <!-- Old way of styling-> very much amount of code to be written -->
+			<li style="color:brown">toyoto altis</li>                 <!--           -> very hard to change(had to change every element) -->
+			<li style="color:brown"><em>alto K10</em></li>
+		</ol>
+	</li>
+	<li>planes</li>
+	<li>trains</li>
+</ol>
+</div>
+<script type="text/javascript" src="alert prompt console.js"></script>
+ </body>
 </html>

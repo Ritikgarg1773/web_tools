@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Forms demo</title>
+</head>
+<body background="http://www.aurorawatch.ca/images/stories/20161031/20161008_Gier_02.jpg" ><center>
+<h1><span >Search box</span></h1>
+ <form action="http://www.google.com/search" method="GET">  
+														 	<!--(block level element) a  container to put together input tags  so that they are related now.has attributes ->   method - get(reterive data) or post(send data) and action - the url of the page to send form  data to. / defaults are get and to the same place where page is present. -->
+<label><em><strong>What do you want to search:</strong></em>
+	<input name="q" minlength="5" maxlength="10" type="text" placeholder="word to be searched" required>
+</label>
+
+<!-- labels let us add captions to elements in our form -> make form accessible/screen reader read it for narration for blind people etc.-->
+<!-- placeholder is a temporary text filled in the box for information purpose -->
+
+ <!-- required is for validation that the form will not be filled with this field empty   -->
+  <!--some input types include validations like email will warn you for @ as well as some following characters for forming an email, i will not let you submit a text or just number input to the email field. similarly you can specify the length of the entered string(like password) by using minlength="" and maxlength="" attributes  -->
+<h2>Choose the closest city to you:</h2>
+<p><em><strong>(for best results of your search)</strong></em></p>
+<label for="mumbai"><strong>Mumbai</strong></label>
+<input type="radio" name="citychoice" id="mumbai" value="mumbai">     
+ <!-- Another way to use label is with an attribute for="" and input tag with id="" -> when these two matches label is attached to the input no matter what the label and input are -->
+ <!-- same name id for each radio button lets make only one choice out of them due to name is a unique attribute -->
+<!-- value is the attribute passed to to POST/GET request when submitted a radio button entry -->
+<label for="delhi"><strong>Delhi</strong></label>
+<input type="radio" name="citychoice" id="delhi" value="delhi">
+<label for="kanpur"><strong>Kanpur</strong></label>
+<input type="radio" name="citychoice" id="kanpur" value="kanpur">
+<label for="hyderabad"><strong>Hyderabad</strong></label>
+<input type="radio" name="citychoice" id="hyderabad" value="hyderabad">
+
+<!-- checkbox are similar to radio button just that we can select mare then one at a time -->
+<h3>On which metro lines have you travelled before?</h3>
+<label><input type="checkbox" name="metro" value="yellow">Yellow</label>
+<label><input type="checkbox" name="metro" value="violet">Violet</label>
+<label><input type="checkbox" name="metro" value="red">Red</label>
+<label><input type="checkbox" name="metro" value="magenta">Magenta</label>
+<label><input type="checkbox" name="metro" value="blue">Blue</label>
+<label><input type="checkbox" name="metro" value="pink">Pink</label>
+<label><input type="checkbox" name="metro" value="green">Green</label>
+<label><input type="checkbox" name="metro" value="orange">Orange</label>
+
+
+
+<br>            <!-- to insert a line -->
+<br>
+<h3>How's your mood?</h3>
+<select name="mood">
+	<option value="happy">:)</option>
+	<option value="normal">:|</option>
+	<option value="sad">:(</option>
+</select>
+<br><br>
+
+<!-- value let us send what we want to send to server instead of what is shown to user -->
+<!-- if value attribute is not present then 'name=on' is sent in request(for radio button/checkbox) , in case of text/textarea text entered by user is sent to the server/no value attribute required -->
+
+<textarea name="code" rows="8" cols="30" placeholder="Write/Paste your code here"></textarea>
+<br><br>
+
+<button>Search on google</button>                    <!--button or <input type="submit" at last of form submits it ,  
+                                                     when we click submit a request is sent to the location defined by action along with the data filled, to see this happening give a name="" field to each input and we will see how a request is made in the url of the page (starting with ? followed by key(the name field)=value(the data filled in) pairs are sent seperated with ampersent(&)) , if name attribute is not present for a element then it will not be sent to the request to server-->                                                  
+</form>
+</center>  
+</body>
+</html>
